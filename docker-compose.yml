@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  php:
+    image: prooph/php:7.1-fpm
+    volumes:
+    - .:/var/www
+
+  arangodb:
+    image: arangodb:latest
+    ports:
+    - 8529:8529
+    environment:
+    - ARANGO_NO_AUTH=1
